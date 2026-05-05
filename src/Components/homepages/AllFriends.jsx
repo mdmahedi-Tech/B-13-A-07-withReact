@@ -1,12 +1,14 @@
 // import React, { use } from 'react';
 
 import { useEffect, useState } from "react";
+import DetailsFreinds from "./DetailsFreinds";
 
 // const fetchpromise=fetch('/Friends.json').then((res)=>res.json());
 const AllFriends = () => {
     // const frineds=use(fetchpromise);
     // console.log(frineds);
-    const [friends,setfriends]=useState([]) 
+    const [friends,setfriends]=useState([]) ;
+    const [loading,setloading]=useState(true);
 
     useEffect(()=>{
     const fethdata=async ()=>{
@@ -15,10 +17,11 @@ const AllFriends = () => {
        //console.log(datas);
 
        setfriends(datas)
+       setloading(false)
     }
     fethdata()
     },[])
-    console.log(friends)
+    console.log(loading,friends)
     return (
         <>
     
@@ -26,27 +29,13 @@ const AllFriends = () => {
             <h1 className='font-semibold text-3xl'>My All Dusto Friends Here</h1>
             {/* <p>length of frinds:{frineds.length}</p> */}
         </div>
-        <div>
+        { loading ? <h1>data loading mahedi</h1> : (<div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-4">
          {
             friends.map((friend,index)=>{
-                return <div className="card bg-base-100 w-96 shadow-sm">
-  <figure className="px-10 pt-10">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes"
-      className="rounded-xl" />
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">Card Title</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div className="card-actions">
-      <button className="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
-</div>
+                return <DetailsFreinds key={index} friend={friend}></DetailsFreinds>
             })
           }
-        </div>
+        </div>)}
         </>
 
     );
