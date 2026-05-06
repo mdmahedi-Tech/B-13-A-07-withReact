@@ -14,13 +14,15 @@ const {audio,setaudion}=useContext(ContextApi);
     return (
        
         <>
-        <div className='text-center'>
-            <h1>status update with charts</h1>
+       <div className='max-w-[1200px] mx-auto py-8'>
+         <div className='space-y-6 text-xl font-semibold'>
+           <h1 className='text-3xl font-bold'> Friendship Analytics</h1>
+           <p>By Interaction Type</p>
         </div>
 
         <div className='flex justify-center items-center'>
             
-             <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
+             <PieChart style={{ width: '80%', maxWidth: '400px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
       <Pie
         data={data}
         innerRadius="80%"
@@ -38,6 +40,7 @@ const {audio,setaudion}=useContext(ContextApi);
       <Tooltip></Tooltip>
     </PieChart>
         </div>
+       </div>
         </>
     );
 };
