@@ -2,25 +2,28 @@
 
 import { useEffect, useState } from "react";
 import DetailsFreinds from "./DetailsFreinds";
+import customsHook from "../../hooks/CustomsHook";
+import CustomsHook from "../../hooks/CustomsHook";
 
 // const fetchpromise=fetch('/Friends.json').then((res)=>res.json());
 const AllFriends = () => {
+    const {friends,loading}=CustomsHook()
     // const frineds=use(fetchpromise);
     // console.log(frineds);
-    const [friends,setfriends]=useState([]) ;
-    const [loading,setloading]=useState(true);
+    // const [friends,setfriends]=useState([]) ;
+    // const [loading,setloading]=useState(true);
 
-    useEffect(()=>{
-    const fethdata=async ()=>{
-       const res= await fetch('/Friends.json');
-       const datas=await res.json();
-       //console.log(datas);
+    // useEffect(()=>{
+    // const fethdata=async ()=>{
+    //    const res= await fetch('/Friends.json');
+    //    const datas=await res.json();
+       
 
-       setfriends(datas)
-       setloading(false)
-    }
-    fethdata()
-    },[])
+    //    setfriends(datas)
+    //    setloading(false)
+    // }
+    // fethdata()
+    // },[])
     console.log(loading,friends)
     return (
         <>

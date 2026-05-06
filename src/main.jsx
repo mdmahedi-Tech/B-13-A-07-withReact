@@ -9,6 +9,8 @@ import Error from './Components/errorpage/Error.jsx'
 import Timeline from './Components/timelilne/Timeline.jsx'
 import Status from './Components/status/Status.jsx'
 import Homepage from './Components/homepage/Homepage.jsx'
+import ShowDetails from './Components/homepages/ShowDetails.jsx'
+import ContextApiProvider from './contextApi/ContextApiProvider.jsx'
 
 
 const router = createBrowserRouter([
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
       {
        index:true,
        element: <Homepage></Homepage>
+      },
+      {
+      path:'/homepage',
+      element:<Homepage></Homepage>
+      },
+      {
+      path:'/homepage/:dynamicId',
+      element:<ShowDetails></ShowDetails>
       },
      {
       path:'/timeline',
@@ -36,8 +46,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <App /> */}
-      <RouterProvider router={router} />,
+    <ContextApiProvider>
+<RouterProvider router={router} />,
+    </ContextApiProvider>
+      
 
   </StrictMode>,
 )

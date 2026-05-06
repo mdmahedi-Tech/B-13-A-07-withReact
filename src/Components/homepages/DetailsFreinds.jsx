@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const DetailsFreinds = ({friend}) => {
     return (
+        <>
+        <Link to={`/homepage/${friend.id}`}>
         <div className="card bg-base-100 shadow-sm">
   <figure className="px-10 pt-10">
     <img
@@ -18,6 +21,8 @@ const DetailsFreinds = ({friend}) => {
     
   </div>
 </div>
+        </Link>
+        </>
     );
 };
 
