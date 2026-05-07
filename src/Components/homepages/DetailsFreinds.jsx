@@ -9,6 +9,8 @@ const DetailsFreinds = ({friend}) => {
   <figure className="px-10 pt-10">
     <img
       src={friend.picture}
+      width={150}
+      height={200}
       alt="Shoes"
       className="rounded-xl" />
   </figure>
