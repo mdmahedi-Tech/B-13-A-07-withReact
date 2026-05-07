@@ -1,4 +1,7 @@
 import React from 'react';
+import { IoIosTimer } from 'react-icons/io';
+import { IoHomeOutline } from 'react-icons/io5';
+import { SiStatuspal } from 'react-icons/si';
 import { Link, NavLink } from 'react-router';
 
 
@@ -11,13 +14,13 @@ const Navbar = () => {
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
       </div>
       </div>
-    <a className="btn btn-ghost text-xl">KeenKeeper</a>
+    <a className="btn btn-ghost text-xl"><span className='font-bold'>Keen</span>Keeper</a>
   </div>
   <div className="navbar-end hidden lg:flex">
     <ul className="menu menu-horizontal px-4 space-x-4">
-      <NavLink to={'/'} className={({isActive})=>`font-semibold ${isActive ? 'text-white bg-green-950 rounded-sm':''}`}><li><a>Home</a></li></NavLink>
-      <NavLink to={'/timeline'} className={({isActive})=>`font-semibold ${isActive ? 'text-white bg-green-950 rounded-sm':''}`}><li><a>TimeLine</a></li></NavLink>
-      <NavLink to={'/status'} className={({isActive})=>`font-semibold ${isActive ? 'text-white bg-green-950 rounded-sm':''}`}><li><a>Status</a></li></NavLink>
+      <NavLink to={'/'} className={({isActive})=>`font-semibold ${isActive ? 'text-white bg-green-950 rounded-sm':''}`}><li><a><IoHomeOutline />Home</a></li></NavLink>
+      <NavLink to={'/timeline'} className={({isActive})=>`font-semibold ${isActive ? 'text-white bg-green-950 rounded-sm':''}`}><li><a><IoIosTimer />TimeLine</a></li></NavLink>
+      <NavLink to={'/status'} className={({isActive})=>`font-semibold ${isActive ? 'text-white bg-green-950 rounded-sm':''}`}><li><a> <SiStatuspal />Status</a></li></NavLink>
       
       
        

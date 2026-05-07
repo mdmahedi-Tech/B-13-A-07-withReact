@@ -14,9 +14,14 @@ const DetailsFreinds = ({friend}) => {
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{friend.name}</h2>
-    <p>{friend.days_since_contact}d ago</p>
-    <p>{friend.tags.map(tag=><h1>{tag}</h1>)}</p>
-    <p>{friend.status}</p>
+    <p className='font-semibold text-gray-700'>{friend.days_since_contact}d ago</p>
+    <p className='bg-green-300 rounded-2xl py-2 px-4'>{friend.tags[0]}</p>
+    <p className={` rounded-sm text-white px-4 ${friend.status === 'almost due' 
+    ? 'bg-red-700' 
+    :friend.status === 'overdue' 
+    ? 'bg-yellow-400' 
+    :'bg-green-700'}`}>
+      {friend.status}</p>
     
     
   </div>
